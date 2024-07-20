@@ -139,6 +139,7 @@ export const side_menu_items: SideMenuItem[] = [
     title: "manage.sidemenu.storages",
     icon: CgDatabase,
     to: "/@manage/storages",
+    role: UserRole.GENERAL,
     component: lazy(() => import("./storages/Storages")),
   },
   {

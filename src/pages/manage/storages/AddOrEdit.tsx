@@ -14,6 +14,8 @@ import {
 import { createStore, produce } from "solid-js/store"
 import { Item } from "./Item"
 import { ResponsiveGrid } from "../common/ResponsiveGrid"
+import { me } from "~/store"
+import { UserMethods, UserRole } from "~/types"
 
 interface DriverInfo {
   common: DriverItem[]
@@ -170,6 +172,19 @@ const AddOrEdit = () => {
               />
             )}
           </For>
+        </Show>
+        <Show when={id}>
+          <Item
+            name="uid"
+            default={me().id.toString()}
+            readonly={!UserMethods.is_admin(me())}
+            type={Type.Number}
+            options={""}
+            value={storage.uid}
+            onChange={(val: any) => {
+              setStorage("uid", val)
+            }}
+          />
         </Show>
       </ResponsiveGrid>
       <Button
