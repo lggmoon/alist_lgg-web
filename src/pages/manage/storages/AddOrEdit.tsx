@@ -153,7 +153,7 @@ const AddOrEdit = () => {
               <Item
                 {...item}
                 driver="common"
-                readonly={item.name == "userid" && !UserMethods.is_admin(me())}
+                readonly={item.name == "user_id" && !UserMethods.is_admin(me())}
                 value={(storage as any)[item.name]}
                 onChange={(val: any) => {
                   setStorage(item.name as keyof Storage, val)
@@ -173,6 +173,19 @@ const AddOrEdit = () => {
               />
             )}
           </For>
+        </Show>
+        <Show when={id}>
+          <Item
+            name="user_id"
+            default={me().id.toString()}
+            readonly={!UserMethods.is_admin(me())}
+            type={Type.Number}
+            options={""}
+            value={storage.user_id}
+            onChange={(val: any) => {
+              setStorage("user_id" as keyof Storage, val)
+            }}
+          />
         </Show>
       </ResponsiveGrid>
       <Button
