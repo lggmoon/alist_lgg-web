@@ -84,6 +84,7 @@ jobs:
           branch: main
           directory: web-dist
           repository: lggmoon/alist_lgg-web-dist
+          force: true
 
       - name: Release
         uses: softprops/action-gh-release@v1
