@@ -83,7 +83,7 @@ export const Task = (props: TaskInfo & TasksProps) => {
               wordBreak: "break-all",
             }}
           >
-            {props.name}
+            (uid:{props.user_id}) {props.name}
           </Heading>
           <TaskState state={props.state} />
           <Text

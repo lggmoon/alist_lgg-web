@@ -56,8 +56,8 @@ export const ContextMenu = () => {
           </Item>
         )}
       </For>
-      <Show when={oneChecked()}>
-        <Item
+      {/*<Show when={oneChecked()}>
+         <Item
           onClick={({ props }) => {
             if (props.is_dir) {
               copySelectedPreviewPage()
@@ -154,7 +154,7 @@ export const ContextMenu = () => {
           </Show>
           <Item onClick={sendToAria2}>{t("home.toolbar.send_aria2")}</Item>
         </Submenu>
-      </Show>
+      </Show> */}
     </Menu>
   )
 }
