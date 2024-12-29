@@ -12,6 +12,7 @@ import {
   BsCloudUploadFill,
   BsSearch,
   BsBucket,
+  BsHddNetwork,
 } from "solid-icons/bs"
 import { FiLogIn } from "solid-icons/fi"
 import { SiMetabase } from "solid-icons/si"
@@ -85,6 +86,12 @@ export const side_menu_items: SideMenuItem[] = [
         component: lazy(() => import("./settings/S3")),
       },
       {
+        title: "manage.sidemenu.ftp",
+        icon: BsHddNetwork,
+        to: "/@manage/settings/ftp",
+        component: () => <CommonSettings group={Group.FTP} />,
+      },
+      {
         title: "manage.sidemenu.other",
         icon: BsMedium,
         to: "/@manage/settings/other",
@@ -102,6 +109,7 @@ export const side_menu_items: SideMenuItem[] = [
         title: "manage.sidemenu.offline_download",
         icon: IoMagnetOutline,
         to: "/@manage/tasks/aria2",
+        role: UserRole.GENERAL,
         component: lazy(() => import("./tasks/offline_download")),
       },
       // {
@@ -120,6 +128,7 @@ export const side_menu_items: SideMenuItem[] = [
         title: "manage.sidemenu.upload",
         icon: BsCloudUploadFill,
         to: "/@manage/tasks/upload",
+        role: UserRole.GENERAL,
         component: lazy(() => import("./tasks/Upload")),
       },
       {
