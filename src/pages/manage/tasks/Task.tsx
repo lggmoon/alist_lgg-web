@@ -199,8 +199,7 @@ export const Task = (props: TaskAttribute & TasksProps & TaskLocalSetter) => {
               textOverflow: "ellipsis",
             }}
           >
-            {title}
-            (uid:{props.user_id}) {props.name}
+            {props.creator}({props.creator_id}) : {props.name}
           </Heading>
         </HStack>
         <Show when={me().role === 2}>

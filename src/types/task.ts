@@ -1,7 +1,7 @@
 export interface TaskInfo {
   id: string
-  user_id: number
   name: string
+  creator_id: number
   creator: string
   creator_role: number
   state: number
